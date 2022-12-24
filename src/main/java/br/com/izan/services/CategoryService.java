@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import br.com.izan.dto.CategoryDTO;
 import br.com.izan.entities.Category;
 import br.com.izan.repositories.CategoryRepository;
+import br.com.izan.services.exceptions.EntityNotFoundException;
 
 @Service
 public class CategoryService {
@@ -27,7 +28,7 @@ public class CategoryService {
 	@Transactional(readOnly = true)
 	public CategoryDTO findById(Long id) {
 		Optional<Category> obj = repository.findById(id);
-		Category entity = obj.get();
+		Category entity = obj.orElseThrow(() -> new EntityNotFoundException("Entity not Found"));
 		return new CategoryDTO(entity);
 	}
 }
