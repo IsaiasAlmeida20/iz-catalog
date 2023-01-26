@@ -3,6 +3,8 @@ package br.com.izan.services;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -27,7 +29,6 @@ import br.com.izan.repositories.ProductRepository;
 import br.com.izan.services.exceptions.DatabaseException;
 import br.com.izan.services.exceptions.ResourceNotFoundException;
 import br.com.izan.tests.Factory;
-import jakarta.persistence.EntityNotFoundException;
 
 @ExtendWith(SpringExtension.class)
 public class ProductServiceTests {

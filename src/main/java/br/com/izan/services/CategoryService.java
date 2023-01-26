@@ -2,6 +2,8 @@ package br.com.izan.services;
 
 import java.util.Optional;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -15,7 +17,6 @@ import br.com.izan.entities.Category;
 import br.com.izan.repositories.CategoryRepository;
 import br.com.izan.services.exceptions.DatabaseException;
 import br.com.izan.services.exceptions.ResourceNotFoundException;
-import jakarta.persistence.EntityNotFoundException;
 
 @Service
 public class CategoryService {
